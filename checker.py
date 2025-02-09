@@ -12,7 +12,7 @@ VALID_GIFT_FILE = "valid_gifts.txt"  # File to store the first valid gift
 ERROR_IMAGES_DIR = "error_images/"  # Folder with multiple "Invalid Gift Code" images
 SCREENSHOT_PATH = "current_screenshot.png"  # Screenshot path
 CROP_COORDS = (232, 255, 692, 602)  # (x1, y1, x2, y2) - Crop area
-DELAY = 3  # 10ms delay per request
+DELAY = 3  # ms delay per request
 
 def load_gift_links():
     """Loads gift links from a text file."""
@@ -99,7 +99,7 @@ def main():
                 print("🎉 Stopping... Valid link saved!")
                 break
 
-            # Ensure 0.01s delay per request
+            # Ensure delay per request
             elapsed_time = time.time() - start_time
             if elapsed_time < DELAY:
                 time.sleep(DELAY - elapsed_time)
